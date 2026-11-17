@@ -1,0 +1,27 @@
+- name: Playbook
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  become_user: root
+  tasks:
+      - name: ensure apache is at the latest version
+        dnf:
+          name: httpd
+          state: present
+      - name: ensure apache is running
+        ansible.builtin.systemd:
+          name: httpd
+          state: started
+          enabled: true
+      - name: Copy file with owner and permissions
+        ansible.builtin.copy:
+          src: index.html
+          dest: /var/www/html/index.html
+      - name: Install text editor nano from yum/dnf
+        ansible.builtin.dnf:
+          name: nano
+          state: present
+      - name: Copy file
+        ansible.builtin.copy:
+          src: my-project.txt
+          dest: /home/ec2-user/
