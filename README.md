@@ -1,6 +1,6 @@
 # Automated AWS Server Pipeline (Terraform · Ansible · InSpec)
 
-A CI/CD pipeline that builds a Linux web server on AWS, configures it, checks it against compliance rules, and tears it down when it's no longer needed, all from code. I built it for **IT 351** at Marymount University in Fall 2026. It originally ran on GitLab CI using the course's GitLab runner.
+A CI/CD pipeline that builds a Linux web server on AWS, configures it, checks it against compliance rules, and tears it down when it's no longer needed, all from code. I built it for **IT 351** at Marymount University in Fall 2026. It originally ran on GitLab CI using the course's GitLab runner and GitLab's CI/CD pipeline tool.
 
 ## What it does
 
